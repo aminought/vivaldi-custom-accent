@@ -68,9 +68,10 @@
         }
     };
 
-    function initMod() {
-        window.customAccent = new CustomAccent();
-    }
-
-    setTimeout(initMod, 1000);
+    var interval = setInterval(() => {
+        if (document.querySelector('#browser')) {
+            window.customAccent = new CustomAccent();
+            clearInterval(interval);
+        }
+    }, 100);
 })();
